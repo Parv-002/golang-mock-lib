@@ -1,6 +1,7 @@
 package database
 
-type database interface {
+//go:generate mockgen -destination=./mocks/db_mock.go -package=database . Db
+type Db interface {
 	Get() []Student
 	GetById(int) Student
 	Set(Student) Class
