@@ -6,18 +6,18 @@ import (
 )
 
 func main() {
-	var c database.Class
-	c = c.Set(database.Student{
+	var c database.Db
+	c = c.Add(database.Student{
 		Name:  "Parv",
 		Id:    1,
 		Grade: 55,
 	})
-	c = c.Set(database.Student{
+	c = c.Add(database.Student{
 		Name:  "Atharva",
 		Id:    2,
 		Grade: 75,
 	})
-	c = c.Set(database.Student{
+	c = c.Add(database.Student{
 		Name:  "Varad",
 		Id:    3,
 		Grade: 85,

@@ -3,7 +3,7 @@ package database
 type Db interface {
 	Get() []Student
 	GetById(int) Student
-	Set(Student) Class
+	Add(Student) Class
 	IsPass(Student) bool
 }
 
@@ -30,7 +30,7 @@ func (c Class) GetById(id int) Student {
 	return Student{}
 }
 
-func (c Class) Set(s Student) Class {
+func (c Class) Add(s Student) Class {
 	c.Students = append(c.Students, s)
 	return c
 }

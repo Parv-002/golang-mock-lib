@@ -34,6 +34,20 @@ func (m *MockDb) EXPECT() *MockDbMockRecorder {
 	return m.recorder
 }
 
+// Add mocks base method.
+func (m *MockDb) Add(arg0 database.Student) database.Class {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Add", arg0)
+	ret0, _ := ret[0].(database.Class)
+	return ret0
+}
+
+// Add indicates an expected call of Add.
+func (mr *MockDbMockRecorder) Add(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Add", reflect.TypeOf((*MockDb)(nil).Add), arg0)
+}
+
 // Get mocks base method.
 func (m *MockDb) Get() []database.Student {
 	m.ctrl.T.Helper()
@@ -74,18 +88,4 @@ func (m *MockDb) IsPass(arg0 database.Student) bool {
 func (mr *MockDbMockRecorder) IsPass(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsPass", reflect.TypeOf((*MockDb)(nil).IsPass), arg0)
-}
-
-// Set mocks base method.
-func (m *MockDb) Set(arg0 database.Student) database.Class {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Set", arg0)
-	ret0, _ := ret[0].(database.Class)
-	return ret0
-}
-
-// Set indicates an expected call of Set.
-func (mr *MockDbMockRecorder) Set(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Set", reflect.TypeOf((*MockDb)(nil).Set), arg0)
 }
