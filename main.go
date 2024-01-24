@@ -31,3 +31,23 @@ func main() {
 		fmt.Printf("Student at id - %d is fail", 1)
 	}
 }
+
+func GetAllStudents(db database.Db) []database.Student {
+	return db.Get()
+}
+
+func GetStudentDetails(db database.Db, id int) database.Student {
+	return db.GetById(id)
+}
+
+func CheckStudentResult(db database.Db, s database.Student) bool {
+	return db.IsPass(s)
+}
+
+func GetStudentDetailsByIds(db database.Db, ids ...int) []database.Student {
+	var students []database.Student
+	for _, i := range ids {
+		students = append(students, db.GetById(i))
+	}
+	return students
+}
