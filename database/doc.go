@@ -1,6 +1,7 @@
 package database
 
 import (
+	_ "github.com/golang/mock/mockgen/model"
 	_ "go.uber.org/mock/mockgen/model"
 )
 
